@@ -1,0 +1,12 @@
+{
+  "name": "marowa-store-digital-commerce-concept",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Independent digital commerce and hardware management concept for Marowa Store, Migori Town, Kenya.",
+  "author": "Thomas Hondo Chacha — Software Engineer",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}

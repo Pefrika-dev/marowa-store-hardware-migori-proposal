@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Demonstration — Marowa Store Concept</title>
+  <meta name="description" content="Demo-only access to the Marowa Store concept admin dashboard. The access code is public by design and is not production security.">
+  <meta name="theme-color" content="#10161b">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Admin Demonstration — Marowa Store Concept">
+  <meta property="og:description" content="Demo-only admin access. Public access code; no production security.">
+  <meta property="og:image" content="assets/img/hero-grinder.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-page="login">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="demo-ribbon">
+    <div class="container">
+      <span><strong>Independent concept</strong> · admin demonstration</span>
+      <span class="demo-ribbon__dot" aria-hidden="true"></span>
+      <span class="demo-ribbon__long">Demo access only. The code is public by design and is not production security.</span>
+      <a href="credits.html">Credits &amp; disclaimer</a>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner" style="grid-template-columns:auto 1fr auto">
+      <a href="index.html" class="brand" aria-label="Marowa Store concept home">
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><rect width="40" height="40" fill="#E85D24"></rect><path d="M9 30V11h5l6 9 6-9h5v19h-5V19l-6 8-6-8v11z" fill="#fff"></path></svg></span>
+        <span class="brand__text"><span class="brand__name">MAROWA</span><span class="brand__sub">STORE · MIGORI</span></span>
+      </a>
+      <span></span>
+      <a class="btn btn--ghost btn--sm" href="index.html"><span data-icon="arrow-left" data-icon-size="15"></span> Back to storefront</a>
+    </div>
+  </header>
+
+  <main id="main" class="auth-shell">
+    <aside class="auth-aside">
+      <div>
+        <span class="eyebrow">Independent proposal</span>
+        <h1>A working back-office view — in your browser.</h1>
+        <p>The admin demonstration covers catalogue records, inventory signals, quotation follow-up and settings. It uses the same local sample data as the storefront.</p>
+      </div>
+      <ul class="auth-aside__list">
+        <li><span data-icon="check-circle" data-icon-size="17"></span> Create, edit and unpublish catalogue listings</li>
+        <li><span data-icon="check-circle" data-icon-size="17"></span> Update quantities and low-stock thresholds</li>
+        <li><span data-icon="check-circle" data-icon-size="17"></span> Review demonstration quotation requests</li>
+        <li><span data-icon="check-circle" data-icon-size="17"></span> Reset, export or import local demo data</li>
+      </ul>
+      <p style="font-family:var(--font-mono);font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.42)">
+        No production credentials · no server · no real customer data
+      </p>
+    </aside>
+
+    <section class="auth-panel">
+      <div class="auth-form">
+        <div id="authSession" hidden></div>
+
+        <div id="authFormWrap">
+          <span class="eyebrow">Admin demonstration</span>
+          <h2>Open the demo dashboard.</h2>
+          <p>This gate exists to separate the storefront from the back-office demonstration. It is not authentication and must never be presented as such.</p>
+
+          <form id="loginForm" novalidate>
+            <div class="field">
+              <label for="accessCode">Demo access code</label>
+              <input type="password" id="accessCode" name="accessCode" autocomplete="off" spellcheck="false" placeholder="Enter the demonstration code" aria-describedby="accessCodeError">
+              <p class="field__error" id="accessCodeError" data-error-for="accessCode"></p>
+            </div>
+            <div class="form-error" id="loginError" role="alert" hidden></div>
+            <button class="btn btn--primary btn--lg" type="submit" id="loginSubmit">
+              <span data-icon="lock" data-icon-size="17"></span> Open demonstration dashboard
+            </button>
+          </form>
+
+          <details class="code-reveal">
+            <summary>Demo access code: MAROWA-DEMO</summary>
+            <div class="code-reveal__body">
+              <p>This code is deliberately visible. It only unlocks a local demonstration interface, and the session ends when this browser tab is closed.</p>
+              <code>MAROWA-DEMO</code>
+            </div>
+          </details>
+
+          <div class="auth-meta">
+            <a href="index.html">Back to storefront</a>
+            <span>Session-only access · no cookie</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="container" style="padding-block:1rem 2rem;text-align:center">
+    <p style="font-family:var(--font-mono);font-size:.58rem;line-height:1.6;color:var(--muted);margin:0">
+      Demonstration only. For a real deployment, authentication must be server-side, rate-limited and backed by hashed credentials and role-based access control.<br>
+      Digital Commerce Concept Designed &amp; Developed by Thomas Hondo Chacha &mdash; Software Engineer.
+    </p>
+  </div>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/icons.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</body>
+</html>

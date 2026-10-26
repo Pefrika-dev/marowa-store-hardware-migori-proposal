@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marowa Store — Digital Commerce Concept | Migori Town</title>
+  <meta name="description" content="An independent frontend concept for Marowa Store, Migori Town: a demonstration hardware catalogue, stock view and quotation workflow. Sample data only; not a live store.">
+  <meta name="theme-color" content="#10161b">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Marowa Store concept">
+  <meta property="og:title" content="Marowa Store — Digital Commerce Concept">
+  <meta property="og:description" content="An independent demonstration of a hardware catalogue, stock view and quotation workflow for Migori Town. Demonstration data only.">
+  <meta property="og:image" content="assets/img/hero-grinder.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Marowa Store concept — demonstration",
+    "alternateName": "Marowa Store digital commerce concept",
+    "description": "Independent frontend demonstration of a hardware catalogue and quotation workflow. Not affiliated with, commissioned by or operated by Marowa Store.",
+    "inLanguage": "en-KE"
+  }
+  </script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="demo-ribbon">
+    <div class="container">
+      <span><strong>Independent concept</strong> · demonstration catalogue</span>
+      <span class="demo-ribbon__dot" aria-hidden="true"></span>
+      <span class="demo-ribbon__long">Prices, stock and product data are sample data — not verified Marowa Store information.</span>
+      <a href="credits.html">Credits &amp; disclaimer</a>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="Marowa Store concept home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" focusable="false"><rect width="40" height="40" fill="#E85D24"></rect><path d="M9 30V11h5l6 9 6-9h5v19h-5V19l-6 8-6-8v11z" fill="#fff"></path></svg>
+        </span>
+        <span class="brand__text"><span class="brand__name">MAROWA</span><span class="brand__sub">STORE · MIGORI</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="products.html" data-nav="products">Products</a>
+        <a href="categories.html" data-nav="categories">Categories</a>
+        <a href="brands.html" data-nav="brands">Brands</a>
+        <a href="quotation.html" data-nav="quotation">Quotation</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" type="button" id="searchToggle" aria-label="Search the catalogue">
+          <span data-icon="search" data-icon-size="20"></span>
+        </button>
+        <a class="icon-btn" href="cart.html" aria-label="View cart">
+          <span data-icon="cart" data-icon-size="20"></span>
+          <span class="badge" data-cart-count hidden>0</span>
+        </a>
+        <a class="header__quote" href="quotation.html">
+          <span>Request quote</span>
+          <span class="badge" data-quote-count hidden>0</span>
+        </a>
+        <a class="icon-btn" href="login.html" aria-label="Open the admin demonstration">
+          <span data-icon="lock" data-icon-size="18"></span>
+        </a>
+        <button class="icon-btn menu-toggle" type="button" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+          <span data-icon="menu" data-icon-size="22"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <span class="hero__eyebrow"><span aria-hidden="true"></span> Independent digital commerce proposal · Migori Town</span>
+          <h1>Sourcing hardware, <em>with fewer loose ends.</em></h1>
+          <p class="hero__lede">
+            A digital catalogue, stock view and quotation workflow for a Migori Town hardware store.
+            This independent concept explores how product discovery and bulk requests could feel
+            clearer — with demonstration data labelled throughout.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="products.html">
+              Browse the catalogue <span data-icon="arrow-right" data-icon-size="18"></span>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="quotation.html">
+              <span data-icon="clipboard" data-icon-size="18"></span> Build a quotation
+            </a>
+          </div>
+          <div class="hero__proof">
+            <div><strong data-catalogue-count>25</strong><span>Demo listings</span></div>
+            <div><strong data-category-count>9</strong><span>Departments</span></div>
+            <div><strong>Frontend-only</strong><span>No live backend</span></div>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__media">
+            <img src="assets/img/hero-grinder.jpg" alt="Illustrative photograph of a worker using an angle grinder, with sparks visible" width="1000" height="1100" fetchpriority="high">
+            <p class="hero__caption">Illustrative photography — not Marowa Store premises or staff.</p>
+          </div>
+          <aside class="hero-ticket" aria-label="Demonstration quotation preview">
+            <div class="hero-ticket__head"><span>Demo request preview</span><b>MRW-Q-··</b></div>
+            <div data-hero-quote-lines>
+              <div class="hero-ticket__line"><span>Cordless Drill Driver</span><span class="mono">×1</span></div>
+              <div class="hero-ticket__line"><span>Tape Measure 8m</span><span class="mono">×1</span></div>
+              <div class="hero-ticket__line"><span>Safety Helmet</span><span class="mono">×1</span></div>
+            </div>
+            <div class="hero-ticket__total"><span>Indicative demo total</span><strong data-hero-quote-total>KSh 8,020</strong></div>
+            <p class="hero-ticket__note">Sample items and prices. No order is placed and no payment is taken.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Concept principles">
+      <div class="container trust-strip__inner">
+        <div class="trust-strip__item">
+          <span data-icon="search" data-icon-size="22"></span>
+          <div><strong>Catalogue &amp; search</strong><span>Filter by department, brand, stock state and indicative price.</span></div>
+        </div>
+        <div class="trust-strip__item">
+          <span data-icon="clipboard" data-icon-size="22"></span>
+          <div><strong>Quotation-first</strong><span>Build a multi-item request. No checkout, no payment, no pretence.</span></div>
+        </div>
+        <div class="trust-strip__item">
+          <span data-icon="layers" data-icon-size="22"></span>
+          <div><strong>Stock awareness</strong><span>Low stock, out of stock and “confirm availability” are kept distinct.</span></div>
+        </div>
+        <div class="trust-strip__item">
+          <span data-icon="shield" data-icon-size="22"></span>
+          <div><strong>Local demonstration</strong><span>Changes live in this browser only. Nothing is sent to a server.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">Shop by department</span>
+            <h2>Nine ways into the store.</h2>
+            <p>Departments group the demonstration catalogue the way a counter is usually organised: by the job to be done, not by marketing categories.</p>
+          </div>
+          <a class="section-head__link" href="categories.html">All categories <span data-icon="arrow-right" data-icon-size="16"></span></a>
+        </div>
+        <div class="category-grid" data-home-categories data-reveal></div>
+      </div>
+    </section>
+
+    <section class="section section--paper">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">Selected listings</span>
+            <h2>A catalogue built for the counter.</h2>
+            <p>Each card shows brand, SKU, unit of sale, stock state and an indicative demonstration price — the details a customer usually has to ask for.</p>
+          </div>
+          <a class="section-head__link" href="products.html">View all products <span data-icon="arrow-right" data-icon-size="16"></span></a>
+        </div>
+        <div class="product-grid" data-featured-grid data-reveal></div>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <div class="container quote-band__inner">
+        <div data-reveal>
+          <span class="eyebrow">The core workflow</span>
+          <h2>A quotation request that keeps its context.</h2>
+          <p>Products, quantities, project notes and contact preferences arrive as one structured request — designed to reduce the back-and-forth before a customer visits the store.</p>
+        </div>
+        <a class="btn btn--light btn--lg" href="quotation.html" data-reveal>
+          Start a request <span data-icon="arrow-right" data-icon-size="18"></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div class="split__media" data-reveal>
+          <img src="assets/img/store-interior.jpg" alt="Illustrative photograph of a hardware store interior with stocked shelves" width="1100" height="880" loading="lazy" decoding="async">
+          <p class="split__caption">Illustrative image — not Marowa Store premises.</p>
+        </div>
+        <div class="split__body" data-reveal>
+          <span class="eyebrow">The brief</span>
+          <h2>A storefront that respects how hardware is actually bought.</h2>
+          <p>
+            Hardware purchasing is rarely a single click. It involves quantities, alternatives,
+            project timing and a conversation. This concept keeps that reality visible instead of
+            forcing it into a generic checkout flow.
+          </p>
+          <ul class="check-list">
+            <li><span data-icon="check" data-icon-size="16"></span> Search by product, SKU, brand or department.</li>
+            <li><span data-icon="check" data-icon-size="16"></span> Build a multi-product request with quantities and per-line notes.</li>
+            <li><span data-icon="check" data-icon-size="16"></span> Manage catalogue, stock signals and request follow-up in one demo admin.</li>
+            <li><span data-icon="check" data-icon-size="16"></span> Designed from 360px phones upward, with keyboard-visible focus states.</li>
+          </ul>
+          <div class="stat-row">
+            <div><strong>25</strong><span>Demo listings</span></div>
+            <div><strong>5</strong><span>Request stages</span></div>
+            <div><strong>0</strong><span>Payments taken</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper section--tight">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">Brands in the demo catalogue</span>
+            <h2>Recognisable names, clearly labelled as sample data.</h2>
+            <p>Brand names are used to demonstrate catalogue structure only. No supplier relationship or stock arrangement is implied.</p>
+          </div>
+        </div>
+        <div class="brand-grid" data-brand-strip data-reveal></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">What this concept demonstrates</span>
+            <h2>Three workflows, fully clickable.</h2>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <article class="feature" data-reveal>
+            <span class="feature__icon"><span data-icon="package" data-icon-size="22"></span></span>
+            <h3>Catalogue operations</h3>
+            <p>Create, edit, unpublish and delete listings. SKU uniqueness, required fields and image fallbacks are enforced in the demo layer.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="feature__icon"><span data-icon="layers" data-icon-size="22"></span></span>
+            <h3>Inventory signals</h3>
+            <p>Quantities and low-stock thresholds are tracked separately from “unknown” stock, so a missing count is never shown as zero.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="feature__icon"><span data-icon="clipboard" data-icon-size="22"></span></span>
+            <h3>Request handling</h3>
+            <p>Move requests through five statuses, add internal notes and print a demonstration document stamped clearly as unofficial.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark section--tight">
+      <div class="container">
+        <div class="split">
+          <div class="split__body" data-reveal>
+            <span class="eyebrow">An honest demonstration</span>
+            <h2 style="max-width:20ch">No backend. No invented approvals.</h2>
+            <p style="color:rgba(255,255,255,.66)">
+              This project is an independent proposal by Thomas Hondo Chacha. It is not commissioned,
+              endorsed or operated by Marowa Store. Product entries, prices, stock levels and request
+              records are sample data. The admin access code is public by design and must never be
+              treated as production security.
+            </p>
+            <div class="tag-row" style="margin-top:1.2rem">
+              <span class="tag tag--demo">Demonstration data</span>
+              <span class="tag" style="background:transparent;color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.2)">localStorage</span>
+              <span class="tag" style="background:transparent;color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.2)">Frontend only</span>
+            </div>
+          </div>
+          <div data-reveal>
+            <div class="notice notice--demo">
+              <span data-icon="info" data-icon-size="18"></span>
+              <p><strong>Production is out of scope here.</strong> The README and production reference describe what a real deployment would require: a server-side API, database, authentication, validation and backups. Read the <a href="credits.html" style="text-decoration:underline">credits and disclaimer</a>.</p>
+            </div>
+            <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem">
+              <a class="btn btn--light" href="credits.html">Credits &amp; sources</a>
+              <a class="btn btn--ghost" href="contact.html">Contact the developer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="brand" aria-label="Marowa Store concept home">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 40 40" focusable="false"><rect width="40" height="40" fill="#E85D24"></rect><path d="M9 30V11h5l6 9 6-9h5v19h-5V19l-6 8-6-8v11z" fill="#fff"></path></svg>
+            </span>
+            <span class="brand__text"><span class="brand__name">MAROWA</span><span class="brand__sub">STORE · MIGORI</span></span>
+          </a>
+          <p>A digital commerce and hardware management concept for a Migori Town store. Built as an independent frontend demonstration — sample products, sample prices, no live transactions.</p>
+          <span class="footer__note">Independent proposal · not commissioned</span>
+        </div>
+        <div class="footer__col">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="products.html">All products</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="quotation.html">Quotation request</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>The store</h3>
+          <ul>
+            <li><a href="contact.html">Contact &amp; visit</a></li>
+            <li><a href="tel:+254716865976" data-tel><span data-icon="phone" data-icon-size="14"></span> <span data-biz-phone>0716 865 976</span></a></li>
+            <li><a href="mailto:marowastores@gmail.com" data-biz-email>marowastores@gmail.com</a></li>
+            <li><a href="#" data-whatsapp data-whatsapp-message="Hello Marowa Store, I would like to make an enquiry."><span data-icon="whatsapp" data-icon-size="14"></span> WhatsApp</a></li>
+            <li><span data-biz-location>Migori Town, next to Bansi Wholesale</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Concept</h3>
+          <ul>
+            <li><a href="credits.html">Credits &amp; disclaimer</a></li>
+            <li><a href="login.html">Admin demonstration</a></li>
+            <li><a href="contact.html">Talk to the developer</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Marowa Store concept. Demonstration interface.</span>
+        <span class="footer__credit">Digital Commerce Concept Designed &amp; Developed by <strong>Thomas Hondo Chacha</strong> &mdash; Software Engineer.</span>
+      </div>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="container" style="padding:1rem">
+      <div class="notice notice--warning"><span data-icon="alert" data-icon-size="18"></span><p><strong>JavaScript is required for this demonstration.</strong> The catalogue, cart and quotation builder are rendered in the browser.</p></div>
+    </div>
+  </noscript>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/icons.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

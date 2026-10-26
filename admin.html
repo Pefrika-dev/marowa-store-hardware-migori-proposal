@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Demonstration — Marowa Store Concept</title>
+  <meta name="description" content="Local demonstration admin for the Marowa Store concept. Catalogue, inventory, quotations, inquiries and settings. Demonstration data only.">
+  <meta name="theme-color" content="#10161b">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body class="admin-body" data-page="admin">
+  <a class="skip-link admin-skip" href="#adminContent">Skip to admin content</a>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar" id="adminSidebar" aria-label="Admin navigation">
+      <div class="admin-sidebar__head">
+        <a href="index.html" class="brand" aria-label="Marowa Store concept home">
+          <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><rect width="40" height="40" fill="#E85D24"></rect><path d="M9 30V11h5l6 9 6-9h5v19h-5V19l-6 8-6-8v11z" fill="#fff"></path></svg></span>
+          <span class="brand__text"><span class="brand__name">MAROWA</span><span class="brand__sub">ADMIN · DEMO</span></span>
+        </a>
+        <button class="icon-btn admin-sidebar__close" type="button" id="adminSidebarClose" aria-label="Close navigation"><span data-icon="close" data-icon-size="20"></span></button>
+      </div>
+
+      <div class="admin-label">Workspace</div>
+      <nav class="admin-nav" aria-label="Admin sections">
+        <button type="button" data-view="overview" class="is-active"><span data-icon="dashboard" data-icon-size="17"></span> Overview</button>
+        <button type="button" data-view="products"><span data-icon="package" data-icon-size="17"></span> Products <span class="admin-nav__count" data-count-products>25</span></button>
+        <button type="button" data-view="inventory"><span data-icon="layers" data-icon-size="17"></span> Inventory <span class="admin-nav__count" data-count-low>3</span></button>
+        <button type="button" data-view="quotations"><span data-icon="clipboard" data-icon-size="17"></span> Quotations <span class="admin-nav__count" data-count-quotes>5</span></button>
+        <button type="button" data-view="inquiries"><span data-icon="inbox" data-icon-size="17"></span> Inquiries <span class="admin-nav__count" data-count-inquiries>3</span></button>
+        <button type="button" data-view="analytics"><span data-icon="chart" data-icon-size="17"></span> Analytics</button>
+        <button type="button" data-view="settings"><span data-icon="settings" data-icon-size="17"></span> Settings</button>
+      </nav>
+
+      <div class="admin-label">Storefront</div>
+      <nav class="admin-nav" aria-label="Storefront links">
+        <a href="index.html"><span data-icon="external" data-icon-size="16"></span> View storefront</a>
+        <a href="products.html"><span data-icon="grid" data-icon-size="16"></span> Public catalogue</a>
+        <a href="quotation.html"><span data-icon="file" data-icon-size="16"></span> Quotation page</a>
+      </nav>
+
+      <div class="admin-sidebar__foot">
+        <div class="admin-sidebar__user">
+          <span class="admin-avatar" aria-hidden="true">DO</span>
+          <div><strong>Demo operator</strong><small>LOCAL SESSION</small></div>
+        </div>
+        <p>Data is stored in this browser only. No server, database or real customer record is connected.</p>
+        <button class="btn btn--ghost btn--sm" type="button" id="adminLogout"><span data-icon="logout" data-icon-size="15"></span> End demo session</button>
+        <p class="admin-sidebar__credit">Digital Commerce Concept Designed &amp; Developed by <strong>Thomas Hondo Chacha</strong> &mdash; Software Engineer.</p>
+      </div>
+    </aside>
+
+    <div class="admin-overlay" id="adminOverlay"></div>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar__left">
+          <button class="icon-btn admin-menu-btn" type="button" id="adminMenuBtn" aria-label="Open admin navigation" aria-controls="adminSidebar" aria-expanded="false"><span data-icon="menu" data-icon-size="20"></span></button>
+          <div class="admin-topbar__crumb">
+            <span>Admin</span>
+            <span data-icon="chevron-right" data-icon-size="11"></span>
+            <strong id="adminCrumb">Overview</strong>
+          </div>
+        </div>
+        <div class="admin-topbar__right">
+          <a class="admin-topbar__store" href="index.html"><span data-icon="external" data-icon-size="14"></span> <span>View storefront</span></a>
+          <a class="icon-btn" href="login.html" aria-label="Session options"><span data-icon="user" data-icon-size="18"></span></a>
+        </div>
+      </header>
+
+      <div class="admin-content" id="adminContent">
+        <div class="admin-banner">
+          <span data-icon="alert" data-icon-size="17"></span>
+          <span><strong>Demonstration admin.</strong> Records, stock and customer names are sample data stored in this browser. This is not a production system and is not affiliated with Marowa Store.</span>
+          <a href="credits.html">Read the disclaimer</a>
+        </div>
+
+        <!-- OVERVIEW -->
+        <section class="admin-view" id="view-overview">
+          <div class="admin-page-head">
+            <div>
+              <h1>Overview</h1>
+              <p>A live summary computed from this browser's demonstration records.</p>
+            </div>
+            <div class="admin-page-head__actions">
+              <a class="btn btn--outline btn--sm" href="products.html"><span data-icon="external" data-icon-size="14"></span> Storefront</a>
+              <button class="btn btn--primary btn--sm" type="button" id="overviewAddProduct"><span data-icon="plus" data-icon-size="15"></span> Add product</button>
+            </div>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric">
+              <div class="metric__label"><span data-icon="package" data-icon-size="13"></span> Published products</div>
+              <div class="metric__value" data-metric="products">0</div>
+              <div class="metric__foot"><span data-metric="products-note">of 0 demo records</span></div>
+            </article>
+            <article class="metric">
+              <div class="metric__label"><span data-icon="layers" data-icon-size="13"></span> Low / out of stock</div>
+              <div class="metric__value" data-metric="low-stock">0</div>
+              <div class="metric__foot"><span data-metric="low-stock-note">Needs attention</span></div>
+            </article>
+            <article class="metric">
+              <div class="metric__label"><span data-icon="clipboard" data-icon-size="13"></span> Open requests</div>
+              <div class="metric__value" data-metric="open-quotes">0</div>
+              <div class="metric__foot"><span data-metric="open-quotes-note">Across five demo stages</span></div>
+            </article>
+            <article class="metric metric--accent">
+              <div class="metric__label"><span data-icon="chart" data-icon-size="13"></span> Indicative pipeline</div>
+              <div class="metric__value" data-metric="pipeline">KSh 0</div>
+              <div class="metric__foot">Demo values, excluding confirm-price lines</div>
+            </article>
+          </div>
+
+          <div class="admin-grid">
+            <div class="admin-col-8">
+              <div class="card">
+                <div class="card__head">
+                  <div><h2>Quotation requests — last six months</h2><p>Computed locally</p></div>
+                  <a class="text-link" href="#quotations" data-goto="quotations">Open queue</a>
+                </div>
+                <div class="card__body" id="quoteChart"></div>
+              </div>
+            </div>
+            <div class="admin-col-4">
+              <div class="card">
+                <div class="card__head"><div><h2>Request status</h2><p>All demo records</p></div></div>
+                <div class="card__body" id="statusDonut"></div>
+              </div>
+            </div>
+            <div class="admin-col-8">
+              <div class="card">
+                <div class="card__head">
+                  <div><h2>Recent quotation requests</h2><p>Newest first</p></div>
+                  <a class="text-link" href="#quotations" data-goto="quotations">View all</a>
+                </div>
+                <div class="card__body card__body--flush">
+                  <div class="table-scroll">
+                    <table class="data-table">
+                      <thead><tr><th>Reference</th><th>Customer</th><th class="num">Lines</th><th class="num">Indicative</th><th>Status</th></tr></thead>
+                      <tbody id="recentQuotationsBody"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="admin-col-4">
+              <div class="card">
+                <div class="card__head">
+                  <div><h2>Low stock signals</h2><p>Threshold-aware</p></div>
+                  <a class="text-link" href="#inventory" data-goto="inventory">Manage</a>
+                </div>
+                <div class="card__body card__body--flush" id="lowStockList"></div>
+              </div>
+            </div>
+            <div class="admin-col-6">
+              <div class="card">
+                <div class="card__head">
+                  <div><h2>Recent activity</h2><p>Local demo log</p></div>
+                </div>
+                <div class="card__body card__body--flush">
+                  <ul class="activity-list" id="activityList"></ul>
+                </div>
+              </div>
+            </div>
+            <div class="admin-col-6">
+              <div class="card">
+                <div class="card__head">
+                  <div><h2>Catalogue snapshot</h2><p>Published demo ranges</p></div>
+                  <a class="text-link" href="#analytics" data-goto="analytics">Analytics</a>
+                </div>
+                <div class="card__body" id="catalogueSnapshot"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PRODUCTS -->
+        <section class="admin-view" id="view-products" hidden>
+          <div class="admin-page-head">
+            <div>
+              <h1>Products</h1>
+              <p>Create, edit and publish demonstration catalogue listings. Changes persist only in this browser.</p>
+            </div>
+            <div class="admin-page-head__actions">
+              <button class="btn btn--outline btn--sm" type="button" id="exportProducts"><span data-icon="download" data-icon-size="14"></span> Export demo data</button>
+              <button class="btn btn--primary btn--sm" type="button" id="addProductBtn"><span data-icon="plus" data-icon-size="15"></span> Add product</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="admin-toolbar">
+              <div class="admin-toolbar__group">
+                <label class="admin-search">
+                  <span data-icon="search" data-icon-size="15"></span>
+                  <span class="visually-hidden">Search products</span>
+                  <input type="search" id="productSearch" placeholder="Search name, SKU or brand…" autocomplete="off">
+                </label>
+                <label class="visually-hidden" for="productCategoryFilter">Filter by category</label>
+                <select class="admin-select" id="productCategoryFilter"><option value="">All departments</option></select>
+                <label class="visually-hidden" for="productStatusFilter">Filter by status</label>
+                <select class="admin-select" id="productStatusFilter">
+                  <option value="">All records</option>
+                  <option value="active">Published</option>
+                  <option value="draft">Unpublished</option>
+                  <option value="low">Low stock</option>
+                  <option value="out">Out of stock</option>
+                  <option value="contact">Confirm stock</option>
+                </select>
+              </div>
+              <div class="admin-toolbar__group">
+                <span class="inventory-hint" id="productTableCount">0 listings</span>
+              </div>
+            </div>
+            <div class="table-scroll">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Product</th><th>Department</th><th class="num">Indicative price</th><th>Stock</th><th>State</th><th style="text-align:right">Actions</th></tr>
+                </thead>
+                <tbody id="productsTableBody"></tbody>
+              </table>
+            </div>
+            <div class="card__foot" id="productsTableFoot">All demonstration records.</div>
+          </div>
+        </section>
+
+        <!-- INVENTORY -->
+        <section class="admin-view" id="view-inventory" hidden>
+          <div class="admin-page-head">
+            <div>
+              <h1>Inventory</h1>
+              <p>Quantities and thresholds are demonstration values. “Not configured” is deliberately different from zero.</p>
+            </div>
+            <div class="admin-page-head__actions">
+              <button class="btn btn--outline btn--sm" type="button" id="inventoryExport"><span data-icon="download" data-icon-size="14"></span> Export demo data</button>
+            </div>
+          </div>
+
+          <div class="metric-grid" id="inventoryMetrics"></div>
+
+          <div class="card">
+            <div class="admin-toolbar">
+              <div class="admin-toolbar__group">
+                <label class="admin-search">
+                  <span data-icon="search" data-icon-size="15"></span>
+                  <span class="visually-hidden">Search inventory</span>
+                  <input type="search" id="inventorySearch" placeholder="Search product, SKU or brand…" autocomplete="off">
+                </label>
+                <label class="visually-hidden" for="inventoryFilter">Filter inventory</label>
+                <select class="admin-select" id="inventoryFilter">
+                  <option value="">All stock states</option>
+                  <option value="low-stock">Low stock</option>
+                  <option value="out-of-stock">Out of stock</option>
+                  <option value="contact">Not configured</option>
+                  <option value="in-stock">In stock</option>
+                </select>
+              </div>
+              <span class="inventory-hint" id="inventoryTableCount">0 records</span>
+            </div>
+            <div class="table-scroll">
+              <table class="data-table">
+                <thead><tr><th>Product</th><th>SKU</th><th class="num">Quantity</th><th class="num">Threshold</th><th>State</th><th class="num">Updated</th><th style="text-align:right">Action</th></tr></thead>
+                <tbody id="inventoryTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- QUOTATIONS -->
+        <section class="admin-view" id="view-quotations" hidden>
+          <div class="admin-page-head">
+            <div>
+              <h1>Quotation queue</h1>
+              <p>Demonstration requests from the storefront and seeded sample records. Status changes are local.</p>
+            </div>
+            <div class="admin-page-head__actions">
+              <a class="btn btn--outline btn--sm" href="quotation.html"><span data-icon="plus" data-icon-size="14"></span> New demo request</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="admin-toolbar">
+              <div class="admin-toolbar__group">
+                <label class="admin-search">
+                  <span data-icon="search" data-icon-size="15"></span>
+                  <span class="visually-hidden">Search quotations</span>
+                  <input type="search" id="quotationSearch" placeholder="Search reference, customer or phone…" autocomplete="off">
+                </label>
+                <label class="visually-hidden" for="quotationStatusFilter">Filter quotation status</label>
+                <select class="admin-select" id="quotationStatusFilter">
+                  <option value="">All statuses</option>
+                  <option>New</option>
+                  <option>Under Review</option>
+                  <option>Draft Prepared</option>
+                  <option>Awaiting Customer</option>
+                  <option>Closed</option>
+                </select>
+              </div>
+              <span class="inventory-hint" id="quotationTableCount">0 requests</span>
+            </div>
+            <div class="table-scroll">
+              <table class="data-table">
+                <thead><tr><th>Reference</th><th>Customer</th><th>Project</th><th class="num">Lines</th><th class="num">Indicative</th><th>Status</th><th class="num">Received</th><th style="text-align:right">Open</th></tr></thead>
+                <tbody id="quotationsTableBody"></tbody>
+              </table>
+            </div>
+            <div class="card__foot" id="quotationsTableFoot">Demonstration records only. No quotation is sent by this interface.</div>
+          </div>
+        </section>
+
+        <!-- INQUIRIES -->
+        <section class="admin-view" id="view-inquiries" hidden>
+          <div class="admin-page-head">
+            <div>
+              <h1>Inquiries</h1>
+              <p>Locally saved demonstration inquiries. No message is transmitted to the store.</p>
+            </div>
+            <div class="admin-page-head__actions">
+              <a class="btn btn--outline btn--sm" href="contact.html"><span data-icon="plus" data-icon-size="14"></span> New demo inquiry</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="admin-toolbar">
+              <div class="admin-toolbar__group">
+                <label class="admin-search">
+                  <span data-icon="search" data-icon-size="15"></span>
+                  <span class="visually-hidden">Search inquiries</span>
+                  <input type="search" id="inquirySearch" placeholder="Search name, topic or message…" autocomplete="off">
+                </label>
+                <label class="visually-hidden" for="inquiryStatusFilter">Filter inquiry status</label>
+                <select class="admin-select" id="inquiryStatusFilter">
+                  <option value="">All statuses</option>
+                  <option>New</option>
+                  <option>In Progress</option>
+                  <option>Resolved</option>
+                  <option>Closed</option>
+                </select>
+              </div>
+              <span class="inventory-hint" id="inquiryTableCount">0 inquiries</span>
+            </div>
+            <div class="table-scroll">
+              <table class="data-table">
+                <thead><tr><th>Reference</th><th>Customer</th><th>Topic</th><th>Status</th><th class="num">Received</th><th style="text-align:right">Open</th></tr></thead>
+                <tbody id="inquiriesTableBody"></tbody>
+              </table>
+            </div>
+            <div class="card__foot" id="inquiriesTableFoot">Demonstration records only.</div>
+          </div>
+        </section>
+
+        <!-- ANALYTICS -->
+        <section class="admin-view" id="view-analytics" hidden>
+          <div class="admin-page-head">
+            <div>
+              <h1>Analytics</h1>
+              <p>Every figure is computed from the local demonstration records. Nothing is fetched from a server.</p>
+            </div>
+            <div class="admin-page-head__actions">
+              <button class="btn btn--outline btn--sm" type="button" id="analyticsRefresh"><span data-icon="refresh" data-icon-size="14"></span> Recompute</button>
+            </div>
+          </div>
+
+          <div class="admin-grid">
+            <div class="admin-col-6">
+              <div class="card">
+                <div class="card__head"><div><h2>Catalogue by department</h2><p>Published demo listings</p></div></div>
+                <div class="card__body" id="categoryChart"></div>
+              </div>
+            </div>
+            <div class="admin-col-6">
+              <div class="card">
+                <div class="card__head"><div><h2>Stock state</h2><p>All catalogue records</p></div></div>
+                <div class="card__body" id="stockDonut"></div>
+              </div>
+            </div>
+            <div class="admin-col-6">
+              <div class="card">
+                <div class="card__head"><div><h2>Indicative value by department</h2><p>Published price &times; stock quantity</p></div></div>
+                <div class="card__body" id="valueChart"></div>
+              </div>
+            </div>
+            <div class="admin-col-6">
+              <div class="card">
+                <div class="card__head"><div><h2>Request funnel</h2><p>Demo quotation statuses</p></div></div>
+                <div class="card__body" id="funnelChart"></div>
+              </div>
+            </div>
+            <div class="admin-col-12">
+              <div class="card">
+                <div class="card__head"><div><h2>Brand spread</h2><p>Published demo listings per brand</p></div></div>
+                <div class="card__body" id="brandChart"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SETTINGS -->
+        <section class="admin-view" id="view-settings" hidden>
+          <div class="admin-page-head">
+            <div>
+              <h1>Settings</h1>
+              <p>These values update the demonstration interface only. They do not change any real business record.</p>
+            </div>
+          </div>
+
+          <div class="settings-grid">
+            <div class="admin-grid" style="display:block">
+              <div class="card">
+                <div class="card__head"><div><h2>Storefront settings</h2><p>Local demo values</p></div></div>
+                <form id="settingsForm">
+                  <div class="settings-section">
+                    <h3>Business details</h3>
+                    <p>Shown in the storefront footer and contact areas.</p>
+                    <div class="settings-form">
+                      <div class="field field--full"><label for="settingBusinessName">Business display name</label><input type="text" id="settingBusinessName" name="businessName"></div>
+                      <div class="field"><label for="settingPhone">Phone</label><input type="tel" id="settingPhone" name="phone"></div>
+                      <div class="field"><label for="settingEmail">Email</label><input type="email" id="settingEmail" name="email"></div>
+                      <div class="field field--full"><label for="settingLocation">Location</label><input type="text" id="settingLocation" name="location"></div>
+                      <div class="field"><label for="settingBranchName">Branch name</label><input type="text" id="settingBranchName" name="branchName"></div>
+                      <div class="field"><label for="settingBranchAddress">Branch address</label><input type="text" id="settingBranchAddress" name="branchAddress"></div>
+                    </div>
+                  </div>
+                  <div class="settings-section">
+                    <h3>Demo behaviour</h3>
+                    <p>Currency, page size, low-stock threshold and reference prefixes.</p>
+                    <div class="settings-form">
+                      <div class="field"><label for="settingCurrency">Currency code</label><input type="text" id="settingCurrency" name="currency" maxlength="3"></div>
+                      <div class="field"><label for="settingPageSize">Catalogue page size</label><input type="number" id="settingPageSize" name="pageSize" min="3" max="48"></div>
+                      <div class="field"><label for="settingLowStock">Default low-stock threshold</label><input type="number" id="settingLowStock" name="lowStockThreshold" min="0"></div>
+                      <div class="field"><label for="settingQuotePrefix">Quotation prefix</label><input type="text" id="settingQuotePrefix" name="quotationPrefix"></div>
+                      <div class="field"><label for="settingInquiryPrefix">Inquiry prefix</label><input type="text" id="settingInquiryPrefix" name="inquiryPrefix"></div>
+                      <div class="field" style="align-self:end"><label class="checkbox-row" style="padding-bottom:.45rem"><input type="checkbox" id="settingShowPrices" name="showIndicativePrices"> Show indicative prices</label></div>
+                    </div>
+                  </div>
+                  <div class="inline-error" id="settingsError" hidden></div>
+                  <div class="settings-actions">
+                    <button class="btn btn--outline btn--sm" type="reset" id="settingsReset">Reset form</button>
+                    <button class="btn btn--primary btn--sm" type="submit" id="saveSettings"><span data-icon="check" data-icon-size="14"></span> Save demo settings</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="admin-grid" style="display:block">
+              <div class="card" style="margin-bottom:.9rem">
+                <div class="card__head"><div><h2>Demo data &amp; storage</h2><p>Browser-local only</p></div></div>
+                <div class="card__body">
+                  <div class="storage-meter" id="storageMeter">
+                    <div class="storage-meter__top"><span>Local storage used</span><span id="storageValue">—</span></div>
+                    <div class="storage-meter__track"><div class="storage-meter__fill" id="storageFill" style="width:0%"></div></div>
+                  </div>
+                  <p style="font-size:.7rem;color:var(--admin-muted);line-height:1.55">
+                    State is stored under <code style="font-family:var(--font-mono)">marowa.demo.state.v1</code>. Export a JSON snapshot before resetting if you want to keep a demonstration state.
+                  </p>
+                  <div class="danger-actions" style="margin-top:.8rem">
+                    <button class="btn btn--outline btn--sm" type="button" id="exportData"><span data-icon="download" data-icon-size="14"></span> Export JSON</button>
+                    <button class="btn btn--outline btn--sm" type="button" id="downloadBackup"><span data-icon="download" data-icon-size="14"></span> Download backup</button>
+                  </div>
+                  <div class="field" style="margin-top:.9rem">
+                    <label for="importData">Import a demo backup</label>
+                    <textarea class="import-area" id="importData" placeholder="Paste an exported JSON snapshot here…"></textarea>
+                    <div class="danger-actions" style="margin-top:.5rem">
+                      <button class="btn btn--dark btn--sm" type="button" id="importDataBtn"><span data-icon="upload" data-icon-size="14"></span> Import JSON</button>
+                      <label class="btn btn--outline btn--sm" style="cursor:pointer">
+                        <span data-icon="file" data-icon-size="14"></span> Choose file
+                        <input type="file" id="importFile" accept="application/json,.json" hidden>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card danger-zone" style="margin-bottom:.9rem">
+                <div class="card__head"><div><h2>Reset demonstration</h2><p>Destructive</p></div></div>
+                <div class="card__body">
+                  <p style="font-size:.72rem;color:var(--admin-muted);line-height:1.6;margin:0 0 .8rem">
+                    Resetting restores the original seeded demo catalogue, quotations, inquiries and settings. Cart and quotation list are cleared. This cannot be undone unless you exported a backup.
+                  </p>
+                  <button class="btn btn--danger btn--sm" type="button" id="resetDemo"><span data-icon="refresh" data-icon-size="14"></span> Reset demo data</button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__head"><div><h2>Security boundary</h2><p>Important</p></div></div>
+                <div class="card__body">
+                  <p style="font-size:.72rem;color:var(--admin-muted);line-height:1.6;margin:0">
+                    This admin is a frontend demonstration. The public access code is not authentication. A production system needs a server-side API, hashed passwords, session management, role-based access control, request validation, rate limiting and audit logging. See <a href="credits.html" style="text-decoration:underline">credits</a> and the README for the documented reference architecture.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT MODAL -->
+  <dialog class="admin-modal" id="productModal" aria-labelledby="productModalTitle">
+    <form class="admin-modal__inner" id="productForm" method="dialog">
+      <div class="admin-modal__head">
+        <div><h2 id="productModalTitle">Add product</h2><p>Demo listing — saved to this browser only.</p></div>
+        <button class="icon-btn" type="button" data-close-admin-modal aria-label="Close product form"><span data-icon="close" data-icon-size="20"></span></button>
+      </div>
+      <div class="admin-modal__body">
+        <input type="hidden" id="productId" name="id">
+        <div class="product-form">
+          <div class="field field--full">
+            <label for="productName">Product name <span aria-hidden="true">*</span></label>
+            <input type="text" id="productName" name="name" required>
+          </div>
+          <div class="field">
+            <label for="productSku">SKU <span aria-hidden="true">*</span></label>
+            <input type="text" id="productSku" name="sku" placeholder="MRW-PT-1004" autocomplete="off" spellcheck="false" required>
+            <p class="field__hint">4–24 uppercase letters, numbers or hyphens.</p>
+          </div>
+          <div class="field">
+            <label for="productBrand">Brand <span aria-hidden="true">*</span></label>
+            <select id="productBrand" name="brand" required></select>
+          </div>
+          <div class="field">
+            <label for="productCategory">Department <span aria-hidden="true">*</span></label>
+            <select id="productCategory" name="category" required></select>
+          </div>
+          <div class="field">
+            <label for="productUnit">Unit of sale <span aria-hidden="true">*</span></label>
+            <select id="productUnit" name="unit" required>
+              <option>Each</option><option>Set</option><option>Pack</option><option>Box</option>
+              <option>Pair</option><option>Metre</option><option>Length</option><option>Bag</option><option>Per 100</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="productPrice">Indicative price (KSh) <span class="optional">blank = confirm</span></label>
+            <input type="number" id="productPrice" name="price" min="0" step="1">
+          </div>
+          <div class="field">
+            <label for="productStockQty">Stock quantity <span class="optional">blank = unknown</span></label>
+            <input type="number" id="productStockQty" name="stockQty" min="0" step="1">
+          </div>
+          <div class="field">
+            <label for="productThreshold">Low-stock threshold</label>
+            <input type="number" id="productThreshold" name="lowStockThreshold" min="0" step="1" value="5">
+          </div>
+          <div class="field">
+            <label for="productImage">Image path</label>
+            <input type="text" id="productImage" name="image" placeholder="assets/img/products/example.jpg">
+          </div>
+          <div class="field">
+            <label for="productImageAlt">Image alt text</label>
+            <input type="text" id="productImageAlt" name="imageAlt">
+          </div>
+          <div class="field field--full">
+            <div class="product-form__image-preview">
+              <img id="productImagePreview" src="assets/img/placeholder.svg" alt="">
+              <span>Preview uses the local image path. A missing image falls back to the placeholder.</span>
+            </div>
+          </div>
+          <div class="field field--full">
+            <label for="productDescription">Description <span aria-hidden="true">*</span></label>
+            <textarea id="productDescription" name="description" required></textarea>
+          </div>
+          <div class="form-divider">Publication</div>
+          <div class="field field--full">
+            <div class="checkbox-row">
+              <label><input type="checkbox" id="productActive" name="active" checked> Published in the demo catalogue</label>
+              <label><input type="checkbox" id="productFeatured" name="featured"> Featured on the homepage</label>
+            </div>
+          </div>
+          <div class="field field--full"><div class="inline-error" id="productFormError" hidden></div></div>
+        </div>
+      </div>
+      <div class="admin-modal__foot">
+        <button class="btn btn--outline btn--sm" type="button" data-close-admin-modal>Cancel</button>
+        <button class="btn btn--primary btn--sm" type="submit"><span data-icon="check" data-icon-size="14"></span> Save product</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- INVENTORY MODAL -->
+  <dialog class="admin-modal admin-modal--sm" id="inventoryModal" aria-labelledby="inventoryModalTitle">
+    <form class="admin-modal__inner" id="inventoryForm" method="dialog">
+      <div class="admin-modal__head">
+        <div><h2 id="inventoryModalTitle">Update inventory</h2><p id="inventoryModalSubtitle">Demo stock values</p></div>
+        <button class="icon-btn" type="button" data-close-admin-modal aria-label="Close inventory form"><span data-icon="close" data-icon-size="20"></span></button>
+      </div>
+      <div class="admin-modal__body">
+        <input type="hidden" id="inventoryProductId">
+        <div class="field" style="margin-bottom:.7rem">
+          <label for="inventoryQty">Stock quantity</label>
+          <input type="number" id="inventoryQty" min="0" step="1" placeholder="Leave blank for unknown">
+          <p class="field__hint">Leave blank when availability must be confirmed — this is not the same as zero.</p>
+        </div>
+        <div class="field" style="margin-bottom:.7rem">
+          <label for="inventoryThreshold">Low-stock threshold</label>
+          <input type="number" id="inventoryThreshold" min="0" step="1">
+        </div>
+        <div class="field">
+          <label for="inventoryNote">Change note <span class="optional">optional</span></label>
+          <textarea id="inventoryNote" placeholder="e.g. Counted during a demonstration stock check." style="min-height:78px"></textarea>
+        </div>
+        <div class="inline-error" id="inventoryFormError" hidden style="margin-top:.7rem"></div>
+      </div>
+      <div class="admin-modal__foot">
+        <button class="btn btn--outline btn--sm" type="button" data-close-admin-modal>Cancel</button>
+        <button class="btn btn--primary btn--sm" type="submit"><span data-icon="check" data-icon-size="14"></span> Save stock</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- QUOTATION MODAL -->
+  <dialog class="admin-modal admin-modal--wide" id="quotationModal" aria-labelledby="quotationModalTitle">
+    <div class="admin-modal__inner">
+      <div class="admin-modal__head">
+        <div><h2 id="quotationModalTitle">Quotation request</h2><p id="quotationModalMeta">Demo record</p></div>
+        <button class="icon-btn" type="button" data-close-admin-modal aria-label="Close quotation detail"><span data-icon="close" data-icon-size="20"></span></button>
+      </div>
+      <div class="admin-modal__body" id="quotationModalBody"></div>
+      <div class="admin-modal__foot">
+        <button class="btn btn--outline btn--sm" type="button" data-close-admin-modal>Close</button>
+        <button class="btn btn--outline btn--sm" type="button" id="printQuotation"><span data-icon="printer" data-icon-size="14"></span> Print demo quotation</button>
+        <button class="btn btn--primary btn--sm" type="button" id="saveQuotation"><span data-icon="check" data-icon-size="14"></span> Save changes</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- INQUIRY MODAL -->
+  <dialog class="admin-modal" id="inquiryModal" aria-labelledby="inquiryModalTitle">
+    <div class="admin-modal__inner">
+      <div class="admin-modal__head">
+        <div><h2 id="inquiryModalTitle">Inquiry</h2><p id="inquiryModalMeta">Demo record</p></div>
+        <button class="icon-btn" type="button" data-close-admin-modal aria-label="Close inquiry detail"><span data-icon="close" data-icon-size="20"></span></button>
+      </div>
+      <div class="admin-modal__body" id="inquiryModalBody"></div>
+      <div class="admin-modal__foot">
+        <button class="btn btn--outline btn--sm" type="button" data-close-admin-modal>Close</button>
+        <button class="btn btn--primary btn--sm" type="button" id="saveInquiry"><span data-icon="check" data-icon-size="14"></span> Save changes</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/icons.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/admin.js?v=20261021" defer></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products — Marowa Store Concept</title>
+  <meta name="description" content="Browse the Marowa Store demonstration catalogue: 25 sample hardware, tool, plumbing, electrical and building-material listings with filters, stock states and indicative prices.">
+  <meta name="theme-color" content="#10161b">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Demonstration Catalogue — Marowa Store Concept">
+  <meta property="og:description" content="Filters, stock states and sample prices across nine hardware departments. Demonstration data only.">
+  <meta property="og:image" content="assets/img/hero-grinder.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+</head>
+<body data-page="products">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="demo-ribbon">
+    <div class="container">
+      <span><strong>Independent concept</strong> · demonstration catalogue</span>
+      <span class="demo-ribbon__dot" aria-hidden="true"></span>
+      <span class="demo-ribbon__long">Prices, stock and product data are sample data — not verified Marowa Store information.</span>
+      <a href="credits.html">Credits &amp; disclaimer</a>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="Marowa Store concept home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" focusable="false"><rect width="40" height="40" fill="#E85D24"></rect><path d="M9 30V11h5l6 9 6-9h5v19h-5V19l-6 8-6-8v11z" fill="#fff"></path></svg>
+        </span>
+        <span class="brand__text"><span class="brand__name">MAROWA</span><span class="brand__sub">STORE · MIGORI</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="products.html" data-nav="products">Products</a>
+        <a href="categories.html" data-nav="categories">Categories</a>
+        <a href="brands.html" data-nav="brands">Brands</a>
+        <a href="quotation.html" data-nav="quotation">Quotation</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" type="button" id="searchToggle" aria-label="Search the catalogue"><span data-icon="search" data-icon-size="20"></span></button>
+        <a class="icon-btn" href="cart.html" aria-label="View cart"><span data-icon="cart" data-icon-size="20"></span><span class="badge" data-cart-count hidden>0</span></a>
+        <a class="header__quote" href="quotation.html"><span>Request quote</span><span class="badge" data-quote-count hidden>0</span></a>
+        <a class="icon-btn" href="login.html" aria-label="Open the admin demonstration"><span data-icon="lock" data-icon-size="18"></span></a>
+        <button class="icon-btn menu-toggle" type="button" id="menuToggle" aria-label="Open navigation menu"><span data-icon="menu" data-icon-size="22"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span data-icon="chevron-right" data-icon-size="12"></span><span aria-current="page">Products</span>
+        </nav>
+        <div class="page-hero__grid">
+          <div>
+            <h1>The demonstration catalogue.</h1>
+            <p>Search by name, SKU or brand; narrow by department, availability and price state. Every listing, price and stock figure here is sample data for this concept.</p>
+          </div>
+          <div class="page-hero__aside">
+            <strong><span data-catalogue-total>25</span> sample listings</strong>
+            9 departments · 23 published<br>
+            Demonstration data only
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalogue">
+      <div class="container catalogue__layout">
+        <form class="filters" id="filtersPanel" aria-label="Filter the catalogue">
+          <div class="filters__head">
+            <h2>Filter catalogue</h2>
+            <div style="display:flex;align-items:center;gap:.5rem">
+              <button type="button" id="filtersClearTop">Reset</button>
+              <button type="button" id="filtersClose" class="filter-close" aria-label="Close filters">Close</button>
+            </div>
+          </div>
+          <div class="filters__body">
+            <div class="filter-group">
+              <div class="filter-group__head"><h3>Department</h3><span id="categoryFilterCount"></span></div>
+              <div id="categoryFilters"></div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group__head"><h3>Brand</h3><span id="brandFilterCount"></span></div>
+              <div id="brandFilters"></div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group__head"><h3>Availability</h3></div>
+              <div id="stockFilters"></div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group__head"><h3>Price state</h3></div>
+              <div id="priceFilters"></div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group__head"><h3>Other</h3></div>
+              <div id="otherFilters"></div>
+            </div>
+          </div>
+          <div class="filters__foot">
+            <button class="btn btn--outline btn--sm" type="button" id="clearFilters">Clear all</button>
+            <button class="btn btn--dark btn--sm" type="button" id="applyFilters">Show results</button>
+          </div>
+        </form>
+
+        <div class="catalogue__main">
+          <form class="catalogue-search" id="catalogueSearchForm" role="search">
+            <span data-icon="search" data-icon-size="18"></span>
+            <label class="visually-hidden" for="catalogueSearch">Search products by name, SKU or brand</label>
+            <input type="search" id="catalogueSearch" name="q" placeholder="Search product, SKU or brand…" autocomplete="off" spellcheck="false">
+            <button class="btn btn--dark btn--sm" type="submit">Search</button>
+          </form>
+
+          <div class="catalogue-toolbar">
+            <p class="catalogue-toolbar__count" id="resultsSummary" aria-live="polite">Showing all demonstration listings.</p>
+            <div class="catalogue-toolbar__controls">
+              <button class="btn btn--outline btn--sm filter-toggle" type="button" id="filterToggle" aria-expanded="false" aria-controls="filtersPanel">
+                <span data-icon="filter" data-icon-size="16"></span> Filters
+              </button>
+              <div class="select">
+                <label class="visually-hidden" for="sortSelect">Sort products</label>
+                <select id="sortSelect">
+                  <option value="featured">Sort: Featured first</option>
+                  <option value="name-asc">Name: A–Z</option>
+                  <option value="name-desc">Name: Z–A</option>
+                  <option value="price-asc">Indicative price: low to high</option>
+                  <option value="price-desc">Indicative price: high to low</option>
+                  <option value="newest">Recently updated</option>
+                </select>
+                <span data-icon="chevron-down" data-icon-size="14"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="active-filters" id="activeFilters"></div>
+
+          <noscript>
+            <div class="notice notice--warning" style="margin-bottom:1rem">
+              <span data-icon="alert" data-icon-size="18"></span>
+              <p><strong>JavaScript is needed to render the catalogue.</strong> The product data is defined in <code>js/data.js</code>.</p>
+            </div>
+          </noscript>
+
+          <div class="product-grid product-grid--catalogue" id="productGrid" aria-live="polite"></div>
+
+          <div class="empty-state" id="emptyState" hidden>
+            <span class="empty-state__icon" data-icon="search" data-icon-size="24"></span>
+            <h2>No demonstration listings match.</h2>
+            <p>Try a different department, remove a filter, or search for a brand such as Metabo, Haco or Stanley.</p>
+            <div class="empty-state__actions">
+              <button class="btn btn--dark btn--sm" type="button" id="emptyClear">Clear all filters</button>
+              <a class="btn btn--outline btn--sm" href="products.html">View the full catalogue</a>
+            </div>
+          </div>
+
+          <nav class="pagination" id="pagination" aria-label="Catalogue pagination"></nav>
+
+          <div class="notice notice--demo" style="margin-top:1.5rem">
+            <span data-icon="info" data-icon-size="18"></span>
+            <p><strong>Demonstration catalogue.</strong> Product names, specifications, prices and stock figures are illustrative sample data. They do not represent verified Marowa Store stock or current pricing. Confirm everything with the store before travelling or ordering.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="brand" aria-label="Marowa Store concept home">
+            <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><rect width="40" height="40" fill="#E85D24"></rect><path d="M9 30V11h5l6 9 6-9h5v19h-5V19l-6 8-6-8v11z" fill="#fff"></path></svg></span>
+            <span class="brand__text"><span class="brand__name">MAROWA</span><span class="brand__sub">STORE · MIGORI</span></span>
+          </a>
+          <p>A digital commerce and hardware management concept for a Migori Town store. Built as an independent frontend demonstration — sample products, sample prices, no live transactions.</p>
+          <span class="footer__note">Independent proposal · not commissioned</span>
+        </div>
+        <div class="footer__col">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="products.html">All products</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="quotation.html">Quotation request</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>The store</h3>
+          <ul>
+            <li><a href="contact.html">Contact &amp; visit</a></li>
+            <li><a href="tel:+254716865976" data-tel><span data-icon="phone" data-icon-size="14"></span> <span data-biz-phone>0716 865 976</span></a></li>
+            <li><a href="mailto:marowastores@gmail.com" data-biz-email>marowastores@gmail.com</a></li>
+            <li><a href="#" data-whatsapp data-whatsapp-message="Hello Marowa Store, I would like to make an enquiry."><span data-icon="whatsapp" data-icon-size="14"></span> WhatsApp</a></li>
+            <li><span data-biz-location>Migori Town, next to Bansi Wholesale</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Concept</h3>
+          <ul>
+            <li><a href="credits.html">Credits &amp; disclaimer</a></li>
+            <li><a href="login.html">Admin demonstration</a></li>
+            <li><a href="contact.html">Talk to the developer</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Marowa Store concept. Demonstration interface.</span>
+        <span class="footer__credit">Digital Commerce Concept Designed &amp; Developed by <strong>Thomas Hondo Chacha</strong> &mdash; Software Engineer.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/icons.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/products.js" defer></script>
+</body>
+</html>

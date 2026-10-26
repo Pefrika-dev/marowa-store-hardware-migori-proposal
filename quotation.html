@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a Quotation — Marowa Store Concept</title>
+  <meta name="description" content="Build a multi-product quotation request in the Marowa Store demonstration concept. No payment, no order and no data sent to a server.">
+  <meta name="theme-color" content="#10161b">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Request a Quotation — Marowa Store Concept">
+  <meta property="og:description" content="A demonstration quotation workflow: products, quantities, project notes and contact preferences. No payment is taken.">
+  <meta property="og:image" content="assets/img/hero-grinder.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+</head>
+<body data-page="quotation">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="demo-ribbon">
+    <div class="container">
+      <span><strong>Independent concept</strong> · demonstration catalogue</span>
+      <span class="demo-ribbon__dot" aria-hidden="true"></span>
+      <span class="demo-ribbon__long">Prices, stock and product data are sample data — not verified Marowa Store information.</span>
+      <a href="credits.html">Credits &amp; disclaimer</a>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="Marowa Store concept home">
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><rect width="40" height="40" fill="#E85D24"></rect><path d="M9 30V11h5l6 9 6-9h5v19h-5V19l-6 8-6-8v11z" fill="#fff"></path></svg></span>
+        <span class="brand__text"><span class="brand__name">MAROWA</span><span class="brand__sub">STORE · MIGORI</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="products.html" data-nav="products">Products</a>
+        <a href="categories.html" data-nav="categories">Categories</a>
+        <a href="brands.html" data-nav="brands">Brands</a>
+        <a href="quotation.html" data-nav="quotation">Quotation</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" type="button" id="searchToggle" aria-label="Search the catalogue"><span data-icon="search" data-icon-size="20"></span></button>
+        <a class="icon-btn" href="cart.html" aria-label="View cart"><span data-icon="cart" data-icon-size="20"></span><span class="badge" data-cart-count hidden>0</span></a>
+        <a class="header__quote" href="quotation.html"><span>Request quote</span><span class="badge" data-quote-count hidden>0</span></a>
+        <a class="icon-btn" href="login.html" aria-label="Open the admin demonstration"><span data-icon="lock" data-icon-size="18"></span></a>
+        <button class="icon-btn menu-toggle" type="button" id="menuToggle" aria-label="Open navigation menu"><span data-icon="menu" data-icon-size="22"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span data-icon="chevron-right" data-icon-size="12"></span><span aria-current="page">Quotation request</span>
+        </nav>
+        <div class="page-hero__grid">
+          <div>
+            <h1>A quotation request, built line by line.</h1>
+            <p>Choose products, add quantities and notes, then describe the project. No payment is taken, no order is placed, and this demonstration does not send the request anywhere.</p>
+          </div>
+          <div class="page-hero__aside"><strong>Quotation-first</strong>No checkout · no payment<br>Stored in this browser only</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="builder">
+      <div class="container builder__layout">
+        <div class="builder__main" id="quoteBuilder">
+          <form id="quoteForm" novalidate>
+            <div class="builder-card">
+              <div class="builder-card__head">
+                <span class="builder-card__step">01</span>
+                <div>
+                  <h2>Your product list</h2>
+                  <p>Add items from the catalogue. Quantities can be adjusted here; line notes are optional.</p>
+                </div>
+              </div>
+              <div class="builder-card__body">
+                <div class="quote-lines" id="quoteLines"></div>
+                <div class="quote-lines__foot" id="quoteLinesFoot" hidden>
+                  <span id="quoteLinesCount">0 items</span>
+                  <button class="btn btn--outline btn--sm" type="button" id="clearQuoteList"><span data-icon="trash" data-icon-size="14"></span> Clear list</button>
+                </div>
+                <div class="quote-empty" id="quoteEmpty">
+                  <p>Your quotation list is empty. Browse the demonstration catalogue and use <strong>Add to quote</strong> on any listing.</p>
+                  <a class="btn btn--dark btn--sm" href="products.html"><span data-icon="package" data-icon-size="15"></span> Browse products</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="builder-card">
+              <div class="builder-card__head">
+                <span class="builder-card__step">02</span>
+                <div>
+                  <h2>Project &amp; contact</h2>
+                  <p>Tell the store what the materials are for and how you would prefer to be contacted. Required fields are marked.</p>
+                </div>
+              </div>
+              <div class="builder-card__body">
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="customerName">Full name <span aria-hidden="true">*</span></label>
+                    <input type="text" id="customerName" name="customerName" autocomplete="name" required aria-describedby="customerNameError">
+                    <p class="field__error" id="customerNameError" data-error-for="customerName"></p>
+                  </div>
+                  <div class="field">
+                    <label for="phone">Phone number <span aria-hidden="true">*</span></label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="07xx xxx xxx" required aria-describedby="phoneError">
+                    <p class="field__error" id="phoneError" data-error-for="phone"></p>
+                  </div>
+                  <div class="field">
+                    <label for="email">Email <span class="optional">optional</span></label>
+                    <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" aria-describedby="emailError emailHint">
+                    <p class="field__hint" id="emailHint">Required only if you prefer an email reply.</p>
+                    <p class="field__error" id="emailError" data-error-for="email"></p>
+                  </div>
+                  <div class="field">
+                    <label for="projectType">Project type</label>
+                    <select id="projectType" name="projectType">
+                      <option value="">Select a project type</option>
+                      <option>Home build</option>
+                      <option>Renovation</option>
+                      <option>Workshop fit-out</option>
+                      <option>Commercial fit-out</option>
+                      <option>Repairs &amp; maintenance</option>
+                      <option>Tool replenishment</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="field field--full">
+                    <span class="field__label">Preferred contact method</span>
+                    <div class="field__group" role="radiogroup" aria-label="Preferred contact method">
+                      <label class="radio-pill"><input type="radio" name="contactMethod" value="Phone call" checked><span>Phone call</span></label>
+                      <label class="radio-pill"><input type="radio" name="contactMethod" value="WhatsApp"><span>WhatsApp</span></label>
+                      <label class="radio-pill"><input type="radio" name="contactMethod" value="Email"><span>Email</span></label>
+                    </div>
+                    <p class="field__hint">This preference is recorded in the demonstration request only. Nothing is sent automatically.</p>
+                  </div>
+                  <div class="field">
+                    <label for="neededBy">Needed by <span class="optional">optional</span></label>
+                    <input type="date" id="neededBy" name="neededBy">
+                    <p class="field__hint">A target date helps the store prioritise, but is not a delivery promise.</p>
+                  </div>
+                  <div class="field">
+                    <label for="preferredBranch">Preferred branch</label>
+                    <input type="text" id="preferredBranch" name="preferredBranch" value="Migori Main" readonly>
+                    <p class="field__hint">Only one branch is represented in this concept.</p>
+                  </div>
+                  <div class="field field--full">
+                    <label for="projectDescription">Project description <span aria-hidden="true">*</span></label>
+                    <textarea id="projectDescription" name="projectDescription" placeholder="Describe the project, any alternatives you would accept, and anything the store should confirm before preparing a quotation." required aria-describedby="projectDescriptionError"></textarea>
+                    <p class="field__hint">At least 15 characters. Do not include payment details or sensitive information.</p>
+                    <p class="field__error" id="projectDescriptionError" data-error-for="projectDescription"></p>
+                  </div>
+                  <div class="field field--full">
+                    <label class="consent">
+                      <input type="checkbox" id="quoteConsent" name="consent">
+                      <span>I understand this is a demonstration request, not a confirmed order. I understand that no payment is taken and that the request is stored only in this browser.</span>
+                    </label>
+                    <p class="field__error" id="consentError" data-error-for="consent"></p>
+                  </div>
+                </div>
+                <div class="form-error" id="quoteFormError" role="alert" hidden></div>
+              </div>
+            </div>
+
+            <div class="builder-card">
+              <div class="builder-card__head">
+                <span class="builder-card__step">03</span>
+                <div>
+                  <h2>Review &amp; save request</h2>
+                  <p>Check the list and contact details. Saving creates a demonstration record in this browser and a local reference.</p>
+                </div>
+              </div>
+              <div class="builder-card__body">
+                <div id="quoteReview" class="quote-review"></div>
+                <div class="form-actions">
+                  <p class="form-actions__note">By saving, a demo record is added to this browser's local storage. No message is transmitted to Marowa Store.</p>
+                  <button class="btn btn--primary btn--lg" type="submit" id="submitQuote">
+                    <span data-icon="clipboard" data-icon-size="18"></span> Save demo request
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <aside class="builder__aside" aria-label="Quotation summary">
+          <div class="summary-card">
+            <div class="summary-card__head">
+              <h2>Request summary</h2>
+              <p>Indicative demonstration values</p>
+            </div>
+            <div class="summary-card__body">
+              <ul class="summary-list" id="quoteSummaryList">
+                <li><span>Products</span><span id="summaryLineCount">0</span></li>
+                <li><span>Total quantity</span><span id="summaryQty">0</span></li>
+                <li><span>Priced lines</span><span id="summaryPriced">0</span></li>
+                <li><span>Confirm-price lines</span><span id="summaryUnpriced">0</span></li>
+              </ul>
+              <div class="summary-total">
+                <span>Indicative total</span>
+                <strong id="quoteSummaryTotal">KSh 0</strong>
+              </div>
+              <p class="summary-card__note">Indicative prices are sample data. They exclude delivery, tax and any current-store pricing. Lines marked “Confirm price” are not included in the total.</p>
+            </div>
+            <div class="summary-card__foot">
+              <a class="btn btn--outline" href="products.html"><span data-icon="plus" data-icon-size="16"></span> Add more products</a>
+              <a class="btn btn--ghost" href="cart.html" style="border-color:var(--line);color:var(--ink)">View cart instead</a>
+            </div>
+            <div class="summary-card__trust">
+              <span data-icon="shield" data-icon-size="18"></span>
+              <span>Frontend demonstration only. No payment, no API call, no shared database.</span>
+            </div>
+          </div>
+
+          <div class="notice notice--demo">
+            <span data-icon="info" data-icon-size="18"></span>
+            <p><strong>How this demo behaves.</strong> Saving adds a record to the admin demonstration in this browser. Clearing browser storage or resetting demo data removes it.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="container" id="quoteConfirmation" hidden></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="brand" aria-label="Marowa Store concept home">
+            <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><rect width="40" height="40" fill="#E85D24"></rect><path d="M9 30V11h5l6 9 6-9h5v19h-5V19l-6 8-6-8v11z" fill="#fff"></path></svg></span>
+            <span class="brand__text"><span class="brand__name">MAROWA</span><span class="brand__sub">STORE · MIGORI</span></span>
+          </a>
+          <p>A digital commerce and hardware management concept for a Migori Town store. Built as an independent frontend demonstration — sample products, sample prices, no live transactions.</p>
+          <span class="footer__note">Independent proposal · not commissioned</span>
+        </div>
+        <div class="footer__col">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="products.html">All products</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="quotation.html">Quotation request</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>The store</h3>
+          <ul>
+            <li><a href="contact.html">Contact &amp; visit</a></li>
+            <li><a href="tel:+254716865976" data-tel><span data-icon="phone" data-icon-size="14"></span> <span data-biz-phone>0716 865 976</span></a></li>
+            <li><a href="mailto:marowastores@gmail.com" data-biz-email>marowastores@gmail.com</a></li>
+            <li><a href="#" data-whatsapp data-whatsapp-message="Hello Marowa Store, I would like to make an enquiry."><span data-icon="whatsapp" data-icon-size="14"></span> WhatsApp</a></li>
+            <li><span data-biz-location>Migori Town, next to Bansi Wholesale</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Concept</h3>
+          <ul>
+            <li><a href="credits.html">Credits &amp; disclaimer</a></li>
+            <li><a href="login.html">Admin demonstration</a></li>
+            <li><a href="contact.html">Talk to the developer</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Marowa Store concept. Demonstration interface.</span>
+        <span class="footer__credit">Digital Commerce Concept Designed &amp; Developed by <strong>Thomas Hondo Chacha</strong> &mdash; Software Engineer.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/icons.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/quotation.js" defer></script>
+</body>
+</html>

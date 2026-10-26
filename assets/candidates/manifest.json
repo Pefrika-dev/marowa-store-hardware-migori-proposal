@@ -1,0 +1,302 @@
+﻿[
+    {
+        "key":  "drill",
+        "query":  "cordless drill",
+        "file":  "drill-1.jpg",
+        "title":  "Close-up of Power Drills on a Workbench",
+        "description":  "A row of cordless power drills on a wooden workbench, ready for use.",
+        "photographer":  "Photo by Christina \u0026 Peter on Pexels",
+        "source":  "https://www.pexels.com/photo/close-up-of-power-drills-on-a-workbench-30413428/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "drill",
+        "query":  "cordless drill",
+        "file":  "drill-2.jpg",
+        "title":  "Faceless focused workman checking drill before work",
+        "description":  "Close-up of a man\u0027s hands holding a cordless drill, preparing for a repair project.",
+        "photographer":  "Photo by Anete Lusina on Pexels",
+        "source":  "https://www.pexels.com/photo/faceless-focused-workman-checking-drill-before-work-4792512/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "drill",
+        "query":  "cordless drill",
+        "file":  "drill-3.jpg",
+        "title":  "A Person Holding Red and Green Cordless Drill",
+        "description":  "Close-up photo of a hand holding a cordless drill in a garden setting. Perfect for DIY and outdoor work themes.",
+        "photographer":  "Photo by El Jundi on Pexels",
+        "source":  "https://www.pexels.com/photo/a-person-holding-red-and-green-cordless-drill-8130011/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "drill",
+        "query":  "cordless drill",
+        "file":  "drill-4.jpg",
+        "title":  "Close-Up of an Electric Drill with Bit",
+        "description":  "A red electric drill with bit, ready for use on a blurred background.",
+        "photographer":  "Photo by Christina \u0026 Peter on Pexels",
+        "source":  "https://www.pexels.com/photo/close-up-of-an-electric-drill-with-bit-30413424/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "drill",
+        "query":  "cordless drill",
+        "file":  "drill-5.jpg",
+        "title":  "Yellow And Black Cordless Hand Drill",
+        "description":  "Cordless drill with lithium battery in workshop setting, ideal for carpentry and construction projects.",
+        "photographer":  "Photo by Caleb Oquendo on Pexels",
+        "source":  "https://www.pexels.com/photo/yellow-and-black-cordless-hand-drill-3877525/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "grinder",
+        "query":  "angle grinder",
+        "file":  "grinder-1.jpg",
+        "title":  "Close-up of Angle Grinder Sparking at Night",
+        "description":  "Angle grinder in action with bright sparks, showcasing metalwork at night.",
+        "photographer":  "Photo by Jorge Romero on Pexels",
+        "source":  "https://www.pexels.com/photo/close-up-of-angle-grinder-sparking-at-night-33473424/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "grinder",
+        "query":  "angle grinder",
+        "file":  "grinder-2.jpg",
+        "title":  "A Person Using a Grinder on a Metal",
+        "description":  "Worker using angle grinder for metalwork, generating bright sparks indoors.",
+        "photographer":  "Photo by Anna Shvets on Pexels",
+        "source":  "https://www.pexels.com/photo/a-person-using-a-grinder-on-a-metal-4315559/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "grinder",
+        "query":  "angle grinder",
+        "file":  "grinder-3.jpg",
+        "title":  "Person Using an Angle Grinder with Sparks",
+        "description":  "Close-up of a skilled worker using a grinder on metal, creating sparks.",
+        "photographer":  "Photo by Swastik Arora on Pexels",
+        "source":  "https://www.pexels.com/photo/person-using-an-angle-grinder-with-sparks-13296066/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "grinder",
+        "query":  "angle grinder",
+        "file":  "grinder-4.jpg",
+        "title":  "Close-Up of Metal Cutting with Power Tool",
+        "description":  "A worker using a power tool creates sparks while cutting metal, showcasing industrial craftsmanship.",
+        "photographer":  "Photo by Mercedes Matzm on Pexels",
+        "source":  "https://www.pexels.com/photo/close-up-of-metal-cutting-with-power-tool-32134163/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "grinder",
+        "query":  "angle grinder",
+        "file":  "grinder-5.jpg",
+        "title":  "A Person Using an Angle Grinder",
+        "description":  "Close-up of a worker using an angle grinder to cut metal, sparks flying.",
+        "photographer":  "Photo by Swastik Arora on Pexels",
+        "source":  "https://www.pexels.com/photo/a-person-using-an-angle-grinder-13296064/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "tape",
+        "query":  "measuring tape",
+        "file":  "tape-1.jpg",
+        "title":  "Conceptual Sex Art",
+        "description":  "A banana wrapped in a measuring tape against a purple background, representing size and measurement concepts.",
+        "photographer":  "Photo by Deon Black on Pexels",
+        "source":  "https://www.pexels.com/photo/yellow-banana-and-measuring-tape-on-purple-background-5750188/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "tape",
+        "query":  "measuring tape",
+        "file":  "tape-2.jpg",
+        "title":  "Yellow and Black Tape Measure on Blue Background",
+        "description":  "Coiled yellow measuring tape against a vibrant blue background, offering ample copy space.",
+        "photographer":  "Photo by Ann H on Pexels",
+        "source":  "https://www.pexels.com/photo/yellow-and-black-tape-measure-on-blue-background-10895042/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "tape",
+        "query":  "measuring tape",
+        "file":  "tape-3.jpg",
+        "title":  "Close-Up Photo of Yellow Tape Measure",
+        "description":  "A bright yellow measuring tape coiled in loops, showcasing measurements clearly against a white background.",
+        "photographer":  "Photo by Marta Longas on Pexels",
+        "source":  "https://www.pexels.com/photo/close-up-photo-of-yellow-tape-measure-3143082/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "tape",
+        "query":  "measuring tape",
+        "file":  "tape-4.jpg",
+        "title":  "Close-Up Photo of Yellow Tape Measure",
+        "description":  "A close-up image of a coiled yellow measuring tape displaying numbers clearly.",
+        "photographer":  "Photo by Marta Longas on Pexels",
+        "source":  "https://www.pexels.com/photo/close-up-photo-of-yellow-tape-measure-3143085/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "tape",
+        "query":  "measuring tape",
+        "file":  "tape-5.jpg",
+        "title":  "Person Holding A Tape Measure",
+        "description":  "Hands carefully holding a measuring tape, focusing on precision and measurement.",
+        "photographer":  "Photo by cottonbro studio on Pexels",
+        "source":  "https://www.pexels.com/photo/person-holding-a-tape-measure-6636369/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "pvc",
+        "query":  "pvc pipe",
+        "file":  "pvc-1.jpg",
+        "title":  "Stack of PVC Pipes at a Construction Site",
+        "description":  "A collection of gray PVC pipes neatly stacked at an outdoor construction site.",
+        "photographer":  "Photo by Sergei Starostin on Pexels",
+        "source":  "https://www.pexels.com/photo/stack-of-pvc-pipes-at-a-construction-site-29301874/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "pvc",
+        "query":  "pvc pipe",
+        "file":  "pvc-2.jpg",
+        "title":  "Water Dripping from an Outdoor Pipe",
+        "description":  "A close-up of water droplets falling from a rusty outdoor pipe against a blurred natural background.",
+        "photographer":  "Photo by Khanh Dang on Pexels",
+        "source":  "https://www.pexels.com/photo/water-dripping-from-an-outdoor-pipe-36571568/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "pvc",
+        "query":  "pvc pipe",
+        "file":  "pvc-3.jpg",
+        "title":  "Heap of construction materials in new house",
+        "description":  "Close-up of renovation materials in an indoor setting with a focus on tubes and planks.",
+        "photographer":  "Photo by Ksenia Chernaya on Pexels",
+        "source":  "https://www.pexels.com/photo/heap-of-construction-materials-in-new-house-5691535/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "pvc",
+        "query":  "pvc pipe",
+        "file":  "pvc-4.jpg",
+        "title":  "Close-up of Hands of a Construction Worker",
+        "description":  "Close-up of a construction worker\u0027s hands in gloves assembling a water pipe outdoors in Kand─▒ra, Turkey.",
+        "photographer":  "Photo by Taha K├╢se on Pexels",
+        "source":  "https://www.pexels.com/photo/close-up-of-hands-of-a-construction-worker-14598653/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "pvc",
+        "query":  "pvc pipe",
+        "file":  "pvc-5.jpg",
+        "title":  "Plastic Pipes on Wall",
+        "description":  "Close-up of interconnected gray metal pipes on an outdoor wall showcasing industrial design.",
+        "photographer":  "Photo by B├╣i Ho├áng Long on Pexels",
+        "source":  "https://www.pexels.com/photo/plastic-pipes-on-wall-12142829/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "fittings",
+        "query":  "pipe fittings",
+        "file":  "fittings-1.jpg",
+        "title":  "Industrial Pipes Against Clear Blue Sky",
+        "description":  "Close-up of large industrial pipes with bolts on a clear day.",
+        "photographer":  "Photo by Mone Kostner on Pexels",
+        "source":  "https://www.pexels.com/photo/industrial-pipes-against-clear-blue-sky-38893871/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "fittings",
+        "query":  "pipe fittings",
+        "file":  "fittings-2.jpg",
+        "title":  "Plastic Pipes on Wall",
+        "description":  "Close-up of interconnected gray metal pipes on an outdoor wall showcasing industrial design.",
+        "photographer":  "Photo by B├╣i Ho├áng Long on Pexels",
+        "source":  "https://www.pexels.com/photo/plastic-pipes-on-wall-12142829/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "fittings",
+        "query":  "pipe fittings",
+        "file":  "fittings-3.jpg",
+        "title":  "Close up of Pipes",
+        "description":  "Close-up of industrial pipes forming a pattern on a building\u0027s exterior wall, shot outdoors.",
+        "photographer":  "Photo by Sonny Sixteen on Pexels",
+        "source":  "https://www.pexels.com/photo/close-up-of-pipes-14845870/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "fittings",
+        "query":  "pipe fittings",
+        "file":  "fittings-4.jpg",
+        "title":  "Close-up Photo of Steel Pipes",
+        "description":  "Detailed view of industrial steel pipes and a gas meter on a brick wall.",
+        "photographer":  "Photo by Jeremiah Buchanan on Pexels",
+        "source":  "https://www.pexels.com/photo/close-up-photo-of-steel-pipes-8581897/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "fittings",
+        "query":  "pipe fittings",
+        "file":  "fittings-5.jpg",
+        "title":  "Chrome Pipe Lines",
+        "description":  "Close-up of complex stainless steel pipes in an industrial setting, showcasing modern engineering.",
+        "photographer":  "Photo by jiawei cui on Pexels",
+        "source":  "https://www.pexels.com/photo/chrome-pipe-lines-2310904/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "roller",
+        "query":  "paint roller",
+        "file":  "roller-1.jpg",
+        "title":  "Paint Rollers on Wooden Surface",
+        "description":  "Two paint rollers over a wooden surface, perfect for home renovation concepts.",
+        "photographer":  "Photo by Polina Tankilevitch on Pexels",
+        "source":  "https://www.pexels.com/photo/paint-rollers-on-wooden-surface-5583052/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "roller",
+        "query":  "paint roller",
+        "file":  "roller-2.jpg",
+        "title":  "Paint Rollers on Floor",
+        "description":  "A decorative rug on wooden flooring with paint rollers and a can for home renovation.",
+        "photographer":  "Photo by Polina Tankilevitch on Pexels",
+        "source":  "https://www.pexels.com/photo/paint-rollers-on-floor-5583122/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "roller",
+        "query":  "paint roller",
+        "file":  "roller-3.jpg",
+        "title":  "Paint Rollers on Wooden Table",
+        "description":  "Top view of yellow paint rollers arranged on a wooden table for DIY projects.",
+        "photographer":  "Photo by Antoni Shkraba on Pexels",
+        "source":  "https://www.pexels.com/photo/paint-rollers-on-wooden-table-5853925/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "roller",
+        "query":  "paint roller",
+        "file":  "roller-4.jpg",
+        "title":  "Close Up Photo of Paint Rollers on Wooden Surface",
+        "description":  "Close-up of paint rollers on a wooden surface, showcasing painting tools and textures.",
+        "photographer":  "Photo by Polina Tankilevitch on Pexels",
+        "source":  "https://www.pexels.com/photo/close-up-photo-of-paint-rollers-on-wooden-surface-5583061/",
+        "licence":  "https://www.pexels.com/license/"
+    },
+    {
+        "key":  "roller",
+        "query":  "paint roller",
+        "file":  "roller-5.jpg",
+        "title":  "Close-Up Shot of Painting Materials and Cans",
+        "description":  "Creative upcycled paint cans with brushes and rollers, perfect for art and DIY projects.",
+        "photographer":  "Photo by Nataliya Vaitkevich on Pexels",
+        "source":  "https://www.pexels.com/photo/close-up-shot-of-painting-materials-and-cans-5641684/",
+        "licence":  "https://www.pexels.com/license/"
+    }
+]

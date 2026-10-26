@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cart — Marowa Store Concept</title>
+  <meta name="description" content="A demonstration cart for the Marowa Store concept. No payment is taken; the cart can be converted into a quotation request and is stored in this browser only.">
+  <meta name="theme-color" content="#10161b">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cart — Marowa Store Concept">
+  <meta property="og:description" content="Demonstration cart with no payment step. Convert items into a quotation request.">
+  <meta property="og:image" content="assets/img/hero-grinder.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="noindex, follow">
+</head>
+<body data-page="cart">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="demo-ribbon">
+    <div class="container">
+      <span><strong>Independent concept</strong> · demonstration catalogue</span>
+      <span class="demo-ribbon__dot" aria-hidden="true"></span>
+      <span class="demo-ribbon__long">Prices, stock and product data are sample data — not verified Marowa Store information.</span>
+      <a href="credits.html">Credits &amp; disclaimer</a>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="Marowa Store concept home">
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><rect width="40" height="40" fill="#E85D24"></rect><path d="M9 30V11h5l6 9 6-9h5v19h-5V19l-6 8-6-8v11z" fill="#fff"></path></svg></span>
+        <span class="brand__text"><span class="brand__name">MAROWA</span><span class="brand__sub">STORE · MIGORI</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="products.html" data-nav="products">Products</a>
+        <a href="categories.html" data-nav="categories">Categories</a>
+        <a href="brands.html" data-nav="brands">Brands</a>
+        <a href="quotation.html" data-nav="quotation">Quotation</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" type="button" id="searchToggle" aria-label="Search the catalogue"><span data-icon="search" data-icon-size="20"></span></button>
+        <a class="icon-btn" href="cart.html" aria-label="View cart"><span data-icon="cart" data-icon-size="20"></span><span class="badge" data-cart-count hidden>0</span></a>
+        <a class="header__quote" href="quotation.html"><span>Request quote</span><span class="badge" data-quote-count hidden>0</span></a>
+        <a class="icon-btn" href="login.html" aria-label="Open the admin demonstration"><span data-icon="lock" data-icon-size="18"></span></a>
+        <button class="icon-btn menu-toggle" type="button" id="menuToggle" aria-label="Open navigation menu"><span data-icon="menu" data-icon-size="22"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span data-icon="chevron-right" data-icon-size="12"></span><span aria-current="page">Cart</span>
+        </nav>
+        <div class="page-hero__grid">
+          <div>
+            <h1>Your cart, kept deliberately simple.</h1>
+            <p>A holding list for demonstration items. There is no checkout and no payment — the useful next step is converting the list into a quotation request.</p>
+          </div>
+          <div class="page-hero__aside"><strong>No payments</strong>Local browser storage<br>Convert to quotation</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container cart-layout">
+      <div class="cart-main" id="cartMain">
+        <div class="empty-state" style="border:0;border-radius:0;min-height:360px">
+          <span class="empty-state__icon" data-icon="cart" data-icon-size="26"></span>
+          <strong>Loading your demonstration cart…</strong>
+          <span>If this remains, JavaScript is unavailable or storage is blocked.</span>
+        </div>
+      </div>
+      <aside class="cart-aside" id="cartAside" aria-label="Cart summary"></aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="brand" aria-label="Marowa Store concept home">
+            <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><rect width="40" height="40" fill="#E85D24"></rect><path d="M9 30V11h5l6 9 6-9h5v19h-5V19l-6 8-6-8v11z" fill="#fff"></path></svg></span>
+            <span class="brand__text"><span class="brand__name">MAROWA</span><span class="brand__sub">STORE · MIGORI</span></span>
+          </a>
+          <p>A digital commerce and hardware management concept for a Migori Town store. Built as an independent frontend demonstration — sample products, sample prices, no live transactions.</p>
+          <span class="footer__note">Independent proposal · not commissioned</span>
+        </div>
+        <div class="footer__col">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="products.html">All products</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="quotation.html">Quotation request</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>The store</h3>
+          <ul>
+            <li><a href="contact.html">Contact &amp; visit</a></li>
+            <li><a href="tel:+254716865976" data-tel><span data-icon="phone" data-icon-size="14"></span> <span data-biz-phone>0716 865 976</span></a></li>
+            <li><a href="mailto:marowastores@gmail.com" data-biz-email>marowastores@gmail.com</a></li>
+            <li><a href="#" data-whatsapp data-whatsapp-message="Hello Marowa Store, I would like to make an enquiry."><span data-icon="whatsapp" data-icon-size="14"></span> WhatsApp</a></li>
+            <li><span data-biz-location>Migori Town, next to Bansi Wholesale</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Concept</h3>
+          <ul>
+            <li><a href="credits.html">Credits &amp; disclaimer</a></li>
+            <li><a href="login.html">Admin demonstration</a></li>
+            <li><a href="contact.html">Talk to the developer</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Marowa Store concept. Demonstration interface.</span>
+        <span class="footer__credit">Digital Commerce Concept Designed &amp; Developed by <strong>Thomas Hondo Chacha</strong> &mdash; Software Engineer.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/icons.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/cart.js" defer></script>
+</body>
+</html>
