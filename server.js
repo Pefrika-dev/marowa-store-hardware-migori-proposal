@@ -44,7 +44,7 @@ const SECURITY_HEADERS = {
     "img-src 'self' data:",
     "font-src 'self'",
     "style-src 'self' 'unsafe-inline'",
-    "script-src 'self'",
+    "script-src 'self' 'sha256-BkKP2XO6WOEc3kXOiLr2ZoY83hamalKjPY9xBcbXVuw='",
     "connect-src 'self'"
   ].join('; ')
 };

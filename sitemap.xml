@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Placeholder host: marowa-concept.example is a reserved example domain.
-  Replace it with the real deployed origin before publishing this sitemap.
+  Deployed origin: https://marowa-store-migori-demo.netlify.app
+  Update this file if the project moves to a custom domain.
   The admin and login pages are intentionally excluded from indexing.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://marowa-concept.example/index.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://marowa-store-migori-demo.netlify.app/index.html</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://marowa-concept.example/products.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://marowa-store-migori-demo.netlify.app/products.html</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://marowa-concept.example/categories.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://marowa-store-migori-demo.netlify.app/categories.html</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marowa-concept.example/brands.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://marowa-store-migori-demo.netlify.app/brands.html</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://marowa-concept.example/product-details.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://marowa-store-migori-demo.netlify.app/product-details.html</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://marowa-concept.example/quotation.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://marowa-store-migori-demo.netlify.app/quotation.html</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marowa-concept.example/cart.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://marowa-store-migori-demo.netlify.app/cart.html</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://marowa-concept.example/contact.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://marowa-store-migori-demo.netlify.app/contact.html</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marowa-concept.example/credits.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://marowa-store-migori-demo.netlify.app/credits.html</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>

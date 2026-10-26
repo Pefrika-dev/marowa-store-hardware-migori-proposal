@@ -39,7 +39,7 @@ Marowa.config = {
   seo: {
     // Set this to the real absolute site URL after a production deployment,
     // for example "https://www.example.com". Leave blank for the local demo.
-    siteUrl: '',
+    siteUrl: 'https://marowa-store-migori-demo.netlify.app',
     defaultImage: 'assets/img/hero-grinder.jpg'
   },
   developer: {

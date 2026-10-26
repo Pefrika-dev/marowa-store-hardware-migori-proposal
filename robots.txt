@@ -1,8 +1,8 @@
 # Independent demonstration project. No production store data is published here.
-# Replace the sitemap host with the real deployed origin before launch.
+# Sitemap host: https://marowa-store-migori-demo.netlify.app
 User-agent: *
 Allow: /
 Disallow: /admin.html
 Disallow: /login.html
 
-Sitemap: https://marowa-concept.example/sitemap.xml
+Sitemap: https://marowa-store-migori-demo.netlify.app/sitemap.xml

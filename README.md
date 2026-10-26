@@ -2,6 +2,8 @@
 
 **An independent frontend proposal for a hardware store in Migori Town, Kenya.**
 
+**Live demonstration:** [https://marowa-store-migori-demo.netlify.app](https://marowa-store-migori-demo.netlify.app)
+
 Prepared by **Thomas Hondo Chacha — Software Engineer**  
 Digital Commerce Concept Designed & Developed by Thomas Hondo Chacha — Software Engineer.
 
@@ -54,7 +56,7 @@ The only real business details used are the contact details supplied for this pr
 - **Node.js 18 or newer** (built and tested with Node **v24.14.1**, npm **11.11.0**).
 - Any modern Chromium, Firefox or Safari browser.
 
-No dependencies are installed and there is no build step.
+No dependencies are installed for local use. The local preview has no build step; the Netlify build uses a small built-in Node copy script and no external packages.
 
 ### Start
 
@@ -85,6 +87,30 @@ The code is intentionally visible on the login page. It is not authentication, i
 ### Opening the files directly
 
 The frontend is plain HTML, CSS and classic deferred scripts, with no bundler. Opening `index.html` directly from disk may work in some browsers, but browser security rules for `localStorage`, downloads and pop-ups vary by `file://` context. Use `npm start` for consistent behaviour and all tested features.
+
+### Hosted deployment
+
+**Live site:** [https://marowa-store-migori-demo.netlify.app](https://marowa-store-migori-demo.netlify.app)
+
+The demonstration is deployed as a static Netlify site. Netlify does not run `server.js`; its security-header and cache behaviour are reproduced in the generated `_headers` file.
+
+Build the clean publish directory locally:
+
+```powershell
+npm run build:netlify
+```
+
+This copies only the runtime pages, styles, scripts, fonts, images, `robots.txt` and `sitemap.xml` into `dist/`. Proposal documents, backend references, source-image candidates and the local server are not published.
+
+Deploy a new production build with the Netlify CLI:
+
+```powershell
+netlify deploy --dir dist --prod
+```
+
+The repository includes `netlify.toml` with the build command and publish directory, so a Git-connected Netlify site can rebuild automatically.
+
+New Netlify projects on credit-based plans can start **private**. For public hosting, open **Project configuration → General → Visitor access → Project visibility** and set the production deployment to **Public**. Preview deployments can remain private.
 
 ### Resetting the demo
 
@@ -204,6 +230,7 @@ The demo deliberately distinguishes:
 - **JavaScript** — ES2015+ classic scripts under a single `window.Marowa` namespace; no bundler and no runtime dependencies.
 - **Storage** — versioned browser `localStorage` with defensive parsing, validation, fallbacks, export/import and reset.
 - **Node.js** — a small static file server with MIME handling, traversal protection, security headers, HEAD support and correct caching.
+- **Netlify** — public static hosting from a clean `dist/` build, with generated security/cache headers and a reproducible build script.
 - **Fonts** — self-hosted Archivo, Inter and IBM Plex Mono (SIL Open Font License 1.1).
 - **Images** — local, compressed, illustrative stock/freely licensed photography; no runtime third-party image requests.
 - **Icons** — original inline SVG set in `js/icons.js`.
@@ -248,9 +275,12 @@ There is **no Express API, no database, no ORM, no authentication library and no
 │  ├─ fonts/                   Self-hosted WOFF2 files
 │  └─ favicon.svg              Original placeholder mark
 ├─ server.js                   Static server, port 5500
-├─ package.json                npm start / npm run dev
+├─ package.json                npm start / npm run dev / npm run build:netlify
+├─ netlify.toml                Netlify build and publish configuration
+├─ scripts/
+│  └─ build-netlify.mjs        Copies runtime files into dist/
 ├─ robots.txt
-├─ sitemap.xml                 Placeholder host — replace before deployment
+├─ sitemap.xml                 Netlify deployment URLs
 ├─ docs/
 │  └─ PRODUCTION_BACKEND.md    Reference production architecture
 ├─ backend/
@@ -301,17 +331,18 @@ Not yet verified: real screen-reader sessions (NVDA/JAWS/VoiceOver), browser zoo
 
 - Unique page titles and descriptions.
 - Open Graph and Twitter card metadata.
-- Canonical/Open Graph URL support through `js/config.js` when a real `seo.siteUrl` is set.
+- Canonical/Open Graph URL support through `js/config.js`; `seo.siteUrl` is set to the live Netlify origin.
 - `robots.txt` excludes the admin demonstration and login gate.
-- `sitemap.xml` is provided with the reserved placeholder host `marowa-concept.example`; replace it with the deployed origin before publishing.
+- `sitemap.xml` uses the live Netlify origin for all public pages.
 - Home page includes one conservative `WebSite` JSON-LD block describing the independent demonstration. No `Product`, `Offer`, `LocalBusiness` or review markup is emitted, because the data is not verified store data.
 
 ---
 
 ## 11. Testing actually performed
 
-**Date:** October 2026  
-**Environment:** Windows, Node v24.14.1, Chromium-based browser session, local static server on port 5500.
+**Date:** 26 October 2026
+
+**Environment:** Windows, Node v24.14.1, Chromium 155, local static server on port 5500, and the public Netlify deployment at `https://marowa-store-migori-demo.netlify.app`.
 
 ### Static checks
 
@@ -364,6 +395,29 @@ Not yet verified: real screen-reader sessions (NVDA/JAWS/VoiceOver), browser zoo
 - JSON export produced a valid snapshot of roughly 49 KB containing `exportedAt`, `note` and `state` with 25 products. Invalid import was rejected; pasted and file-upload imports both restored data.
 - Reset restored the original counts, settings, cart/quotation list and removed test records.
 
+### Hosted Netlify checks
+
+The site was built with `npm run build:netlify` and deployed with the Netlify CLI. The production deployment was then checked over HTTPS:
+
+| Check | Result |
+| --- | --- |
+| All 11 public pages and the main CSS/JS/image assets | `200` |
+| Missing path | `404` |
+| Project visibility | Public |
+| `Content-Security-Policy`, `Strict-Transport-Security`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` | Present |
+| HTML caching | `max-age=0, must-revalidate` |
+| Asset caching | `max-age=86400` |
+
+A scripted headless Chromium pass against the live URL confirmed:
+
+- Home rendered 8 featured cards and 9 departments with no broken images and no horizontal overflow.
+- The Power Tools catalogue filter returned 3 cards.
+- *Cordless Drill Driver* rendered its sample price, add-to-cart and add-to-quotation controls.
+- `login.html?next=admin.html` accepted `MAROWA-DEMO` and redirected to the admin.
+- The admin product view listed 25 demo records and displayed the overview metrics.
+- The browser console reported no JavaScript or CSP errors during the hosted pass.
+- Demo state and session storage were cleared before the test; the production site starts from seed data in a fresh browser.
+
 ### Responsive checks
 
 A temporary same-origin iframe harness measured nine pages at five widths: **360, 390, 768, 1024 and 1440 px** — 45 page/width combinations.
@@ -396,7 +450,7 @@ A temporary same-origin iframe harness measured nine pages at five widths: **360
 5. **No payments or checkout.** This is intentional.
 6. **Sample data.** Prices, stock, product descriptions and specifications are illustrative. Some are deliberately unconfigured to demonstrate “confirm” states.
 7. **Illustrative imagery.** Photographs are stock/freely licensed images, not the store's products or premises.
-8. **Placeholder SEO host.** `sitemap.xml` and `js/config.js` use reserved/example values until a real domain is configured.
+8. **Static hosting limits.** Netlify serves the static build only. `server.js` and its Node-level checks are not active there; equivalent basic headers are generated in `dist/_headers`.
 9. **Demo access code in client code.** Unsuitable for production; replace with server-side authentication.
 10. **No automated test suite.** Validation was performed through syntax checks, HTTP checks and scripted browser interactions.
 

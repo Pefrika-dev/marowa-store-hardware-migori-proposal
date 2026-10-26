@@ -7,3 +7,5 @@ var/
 .DS_Store
 Thumbs.db
 screenshots/
+dist/
+.netlify/
