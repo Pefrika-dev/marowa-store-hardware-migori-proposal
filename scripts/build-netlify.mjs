@@ -28,7 +28,12 @@ const pages = [
 ];
 
 const directories = ['css', 'js', join('assets', 'img'), join('assets', 'fonts')];
-const files = ['robots.txt', 'sitemap.xml', join('assets', 'favicon.svg')];
+const files = [
+  'robots.txt',
+  'sitemap.xml',
+  'google4hpg47uePkf2UPucmPxka-puZovC-NyRAC1Y5ayFDMk.html',
+  join('assets', 'favicon.svg')
+];
 
 const headers = `/*
   X-Content-Type-Options: nosniff
